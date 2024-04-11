@@ -1,5 +1,6 @@
 package pages;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,9 +17,16 @@ public class BasePage {
 
 
     static {
-        System.setProperty("webdriver.gecko.driver", "C:\\Users\\casa\\Documents\\testPlexus\\src\\test\\resources\\drivers\\geckodriver.exe");
-        driver = new FirefoxDriver();
+        /*System.setProperty("webdriver.gecko.driver", "C:\\Users\\casa\\Documents\\testPlexus\\src\\test\\resources\\drivers\\geckodriver.exe");
+        driver = new FirefoxDriver();*/
 
+        //esta sería la configuracion con boni garcia para chrome
+       /* WebDriverManager.chromedriver().setup();
+        driver= new ChromeDriver();*/
+
+        //esta sería la configuracion con boni garcia para firefox
+        WebDriverManager.firefoxdriver().setup();
+        driver= new FirefoxDriver();
     }
 
 
